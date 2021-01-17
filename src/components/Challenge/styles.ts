@@ -24,19 +24,18 @@ export const Infos = styled.View`
 
 export const Details = styled.View`
   flex-direction: row;
-  /* justify-content: flex-end; */
+  justify-content: space-between;
   align-items: center;
 `;
 
 export const StackContainer = styled.View<{borderColor?: string}>`
-  border-color: ${({borderColor}) => borderColor || '#000'};
-  border: 1px solid;
+  /* border-color: #FFF; */
+  border: 1px solid #333333 ;
   border-radius: 4px;
   width: 121px;
   height: 24px;
   align-items: center;
   justify-content: center;
-  /* align-self: flex-end; */
 `;
 
 // export const StackText = styled.Text`

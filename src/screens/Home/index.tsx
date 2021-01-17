@@ -1,8 +1,6 @@
-import React from 'react';
-import {View, Text, Image} from 'react-native';
-import path from 'path';
-import RNText from '../../components/RNText';
-import SearchBar from '../../components/SearchBar';
+import React from "react";
+import RNText from "../../components/RNText";
+import SearchBar from "../../components/SearchBar";
 import {
   Container,
   Content,
@@ -14,11 +12,12 @@ import {
   MainChallenges,
   MainChallengesHeader,
   Hackathons,
-} from './styles';
-import {ScrollView} from 'react-native';
-import Partner from '../../components/Partner';
-import Challenge from '../../components/Challenge';
-import HackathonBanner from '../../components/HackathonBanner';
+} from "./styles";
+import { ScrollView } from "react-native";
+import avatar from "../../images/avatar.png";
+import Partner from "../../components/Partner";
+import Challenge from "../../components/Challenge";
+import HackathonBanner from "../../components/HackathonBanner";
 
 const Home = () => {
   return (
@@ -31,30 +30,26 @@ const Home = () => {
             </RNText>
             <RNText>Mãos à obra?</RNText>
           </TitleAndSubtitle>
-          <Avatar
-            source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
-            }}
-          />
+          <Avatar source={avatar} />
         </Welcome>
         <SearchBar placeholder="Procure por algum projeto aqui..." />
       </Header>
       <Content>
         <Partners>
-          <RNText bold size={16} color="#333333">
+          <RNText bold size={16} color="#333333" marginLeft={30}>
             Empresas parceiras
           </RNText>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{alignItems: 'center', paddingLeft: 16}}
-            style={{marginTop: 8}}>
-            <Partner text="Grupo CCR" />
-            <Partner text="Quicko" />
-            <Partner text="Shawee" />
-            <Partner text="Abcde" />
-            <Partner text="Fghij" />
-            <Partner text="Klmno" />
+            contentContainerStyle={{ alignItems: "center", paddingLeft: 16 }}
+            style={{ marginTop: 8 }}
+          >
+            <Partner text="Grupo CCR" image="ccr" />
+            <Partner text="Quicko" image="quicko" />
+            <Partner text="Shawee" image="shawee" />
+            <Partner text="Rocket" image="rocket" />
+            <Partner text="Empreend" image="empreende" />
           </ScrollView>
         </Partners>
         <MainChallenges>
@@ -67,21 +62,24 @@ const Home = () => {
             </RNText>
           </MainChallengesHeader>
           <Challenge
+            image="shawee"
             hours={99}
             partner="Shawee"
             title="Desafio DevHard"
             stack="UX Design"
           />
           <Challenge
+            image="rocket"
             hours={99}
-            partner="Shawee"
-            title="Desafio DevHard"
-            stack="UX Design"
+            partner="RocketSeat"
+            title="Projeto ReactNow"
+            stack="Front-end"
           />
           <Challenge
+            image="empreende"
             hours={99}
-            partner="Shawee"
-            title="Desafio DevHard"
+            partner="Empreende aí"
+            title="Missão periferiaVive"
             stack="UX Design"
           />
         </MainChallenges>
@@ -97,43 +95,49 @@ const Home = () => {
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{alignItems: 'center', paddingLeft: 16}}
-            style={{marginTop: 8}}>
+            contentContainerStyle={{ alignItems: "center", paddingLeft: 16 }}
+            style={{ marginTop: 8 }}
+          >
             <HackathonBanner
-              description="Inscrições até dia 10/01"
+              image="ccrhack"
+              description="Inscrições até dia 10/02"
               title="Hackathon CCR"
             />
             <HackathonBanner
-              description="Inscrições até dia 10/01"
-              title="Hackathon CCR"
+              image="megahack"
+              description="Inscrições até dia 22/01"
+              title="MegaHack"
             />
           </ScrollView>
         </Hackathons>
         <MainChallenges>
           <MainChallengesHeader>
             <RNText bold size={16} color="#555555">
-              Principais desafios
+              Recrutando agora
             </RNText>
             <RNText size={12} color="#777777">
               Ver todos
             </RNText>
           </MainChallengesHeader>
           <Challenge
+            image="ccr"
             hours={99}
-            partner="Shawee"
-            title="Desafio DevHard"
+            partner="Instituto CCR"
+            title="Desafio Covid-19"
             stack="UX Design"
           />
           <Challenge
+            image="rocket"
             hours={99}
-            partner="Shawee"
-            title="Desafio DevHard"
-            stack="UX Design"
+            partner="RocketSeat"
+            title="Projeto ReactNow"
+            stack="Front-end"
           />
           <Challenge
+            image="empreende"
             hours={99}
-            partner="Shawee"
-            title="Desafio DevHard"
+            partner="Empreende aí"
+            title="Missão periferiaVive"
             stack="UX Design"
           />
         </MainChallenges>

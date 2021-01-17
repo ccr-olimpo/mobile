@@ -1,19 +1,41 @@
+import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/Feather'
-import * as React from 'react';
+import { MaterialIcons } from "@expo/vector-icons";
 
 import Home from '../screens/Home';
 import Briefing from '../screens/Briefing';
 // import Search from '../screens/Search';
 import { BottomTabParamList } from '../types';
-const BottomTab = createBottomTabNavigator<BottomTabParamList>();
+
+const BottomTab = createBottomTabNavigator();
+
+const icons = {
+  Home: "home",
+  Search: "search",
+  Bookmark: "bookmark",
+  Profile: "person",
+};
 
 export default function BottomTabNavigator() {
-
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
+      screenOptions={({ route, navigation }) => ({
+        tabBarIcon: ({ color, size, focused }) => {
+          return (
+            <MaterialIcons name={icons[route.name]} size={40} color="#213A4A" />
+          );
+        },
+      })}
+      tabBarOptions={{
+        style: {
+          backgroundColor: "#fff",
+          borderTopColor: "#fff",
+        },
+        activeTintColor: "#213A4A",
+        inactiveTintColor: "rgba(33, 58, 74, 0.5)",
+      }}
       >
       <BottomTab.Screen
         name="Home"
@@ -40,6 +62,7 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="Home"
         component={Home}
+        options={{ headerShown: false }}
       />
     </HomeStack.Navigator>
   );

@@ -7,7 +7,8 @@ export const Container = styled.View`
   border-radius: 16px;
   margin-top: 8px;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 
 export const TextInput = styled.TextInput`

@@ -1,18 +1,32 @@
-import React from 'react';
-import RNText from '../RNText';
+import React from "react";
+import RNText from "../RNText";
 import {
   Container,
   PartnerLogo,
   Infos,
   Details,
   StackContainer,
-} from './styles';
+} from "./styles";
+import ccr from "../../images/ccr-logo.png";
+import rocket from "../../images/rocket-logo.png";
+import shawee from "../../images/shawee-logo.png";
+import quicko from "../../images/quicko-logo.png";
+import empreende from "../../images/empreende-logo.png";
+
+const imagesMap: any = {
+  ccr,
+  rocket,
+  shawee,
+  quicko,
+  empreende,
+};
 
 type ChallengeProps = {
   partner: string;
   title: string;
   hours: number;
   stack: string;
+  image: string;
 };
 
 const Challenge: React.FC<ChallengeProps> = ({
@@ -20,19 +34,18 @@ const Challenge: React.FC<ChallengeProps> = ({
   partner,
   stack,
   title,
+  image
 }) => {
   return (
     <Container>
       <PartnerLogo
-        source={{
-          uri: 'https://reactnative.dev/img/tiny_logo.png',
-        }}
+        source={imagesMap[image]}
       />
       <Infos>
-        <RNText>{partner}</RNText>
-        <RNText bold>{title}</RNText>
+        <RNText color="#333333">{partner}</RNText>
+        <RNText bold color="#213A4A">{title}</RNText>
         <Details>
-          <RNText style={{marginRight: 50}}>{hours} horas</RNText>
+          <RNText color="#333333">{hours} horas</RNText>
           <StackContainer>
             <RNText size={13} color="#E949F5">
               {stack}
