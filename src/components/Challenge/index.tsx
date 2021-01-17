@@ -47,7 +47,7 @@ const Challenge: React.FC<ChallengeProps> = ({
         <Details>
           <RNText color="#333333">{hours} horas</RNText>
           <StackContainer>
-            <RNText size={13} color="#E949F5">
+            <RNText size={13} color="#333333">
               {stack}
             </RNText>
           </StackContainer>

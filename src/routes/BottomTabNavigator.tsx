@@ -28,6 +28,7 @@ export default function BottomTabNavigator() {
         },
       })}
       tabBarOptions={{
+        showLabel: false,
         style: {
           backgroundColor: "#fff",
           borderTopColor: "#fff",

@@ -67,8 +67,10 @@ export const MainChallengesHeader = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-left:16px;
+  padding-right:16px;
 `;
 
 export const Hackathons = styled.View`
-  padding: 16px;
+  /* padding: 16px; */
 `;

@@ -35,7 +35,8 @@ export const StackContainer = styled.View<{borderColor?: string}>`
   width: 121px;
   height: 24px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-left: 60px;
 `;
 
 // export const StackText = styled.Text`
