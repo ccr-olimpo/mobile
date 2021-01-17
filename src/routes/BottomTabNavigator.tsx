@@ -1,12 +1,12 @@
-import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/Feather'
 import * as React from 'react';
 
 import Home from '../screens/Home';
+import Briefing from '../screens/Briefing';
 // import Search from '../screens/Search';
 import { BottomTabParamList } from '../types';
-
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
@@ -18,6 +18,10 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Home"
         component={HomeNavigator}
+      />
+      <BottomTab.Screen
+        name="Briefing"
+        component={BriefingNavigator}
       />
       {/* <BottomTab.Screen
         name="Search"
@@ -38,6 +42,19 @@ function HomeNavigator() {
         component={Home}
       />
     </HomeStack.Navigator>
+  );
+}
+
+const BriefingStack = createStackNavigator();
+
+function BriefingNavigator() {
+  return (
+    <BriefingStack.Navigator>
+      <BriefingStack.Screen
+        name="Briefing"
+        component={Briefing}
+      ></BriefingStack.Screen>
+    </BriefingStack.Navigator>
   );
 }
 
