@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, TextInputProps, View} from 'react-native';
+import {Image, TextInputProps, Text} from 'react-native';
 import {MaterialIcons} from '@expo/vector-icons';
 import {Container, TextInput} from './styles';
 
@@ -15,9 +15,9 @@ const SearchBar: React.FC<TextInputProps> = ({
 }) => {
   return (
     <Container>
-      {!!leftIcon ? leftIcon : <Image source={{uri: ''}} />}
-      <TextInput placeholder={placeholder} style={{backgroundColor: 'red'}} />
-      {!!rightIcon ? rightIcon : <View style={{backgroundColor: 'blue'}} />}
+      {/* {!!leftIcon ? leftIcon : <Image source={{uri: ''}} />} */}
+      <TextInput placeholderTextColor="#777777" placeholder={placeholder} />
+      {/* {!!rightIcon ? rightIcon : <View style={{backgroundColor: 'blue'}} />} */}
     </Container>
   );
 };

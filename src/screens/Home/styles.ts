@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import RNText from '../../components/RNText';
 
 export const Container = styled.ScrollView`
   background-color: #e9fff9;
@@ -10,7 +11,7 @@ export const Header = styled.View`
   background-color: #44ffda;
   width: 100%;
   padding: 17px;
-  height: 316px;
+  height: 260px;
   border-bottom-left-radius: 43px;
   flex-direction: column;
   /* flex: 0.5; */
@@ -40,12 +41,34 @@ export const Avatar = styled.Image`
 export const Content = styled.View`
   width: 100%;
   height: 100%;
-  background-color: rgba(68, 255, 21, 0.95);
   border-bottom-left-radius: 43px;
   /* flex: 1.5; */
 `;
 
 export const Partners = styled.View`
   flex-direction: column;
-  
+  margin-top: -90px;
+  justify-content: space-between;
+  height: 162px;
+  /* -bottom: 16px; */
+`;
+
+export const PartnersTitle = styled(RNText)`
+  /* color: #fff; */
+  /* background-color: red; */
+  /* padding-left: 20px; */
+`;
+
+export const MainChallenges = styled.View`
+  padding: 16px;
+`;
+
+export const MainChallengesHeader = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Hackathons = styled.View`
+  padding: 16px;
 `;

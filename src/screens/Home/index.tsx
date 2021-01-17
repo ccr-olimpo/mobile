@@ -11,8 +11,14 @@ import {
   TitleAndSubtitle,
   Avatar,
   Partners,
+  MainChallenges,
+  MainChallengesHeader,
+  Hackathons,
 } from './styles';
-import img from '../../images/Ellipse 8.png';
+import {ScrollView} from 'react-native';
+import Partner from '../../components/Partner';
+import Challenge from '../../components/Challenge';
+import HackathonBanner from '../../components/HackathonBanner';
 
 const Home = () => {
   return (
@@ -31,10 +37,106 @@ const Home = () => {
             }}
           />
         </Welcome>
-        <SearchBar placeholder="aaaaaa" />
+        <SearchBar placeholder="Procure por algum projeto aqui..." />
       </Header>
       <Content>
-        <Partners />
+        <Partners>
+          <RNText bold size={16} color="#333333">
+            Empresas parceiras
+          </RNText>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{alignItems: 'center', paddingLeft: 16}}
+            style={{marginTop: 8}}>
+            <Partner text="Grupo CCR" />
+            <Partner text="Quicko" />
+            <Partner text="Shawee" />
+            <Partner text="Abcde" />
+            <Partner text="Fghij" />
+            <Partner text="Klmno" />
+          </ScrollView>
+        </Partners>
+        <MainChallenges>
+          <MainChallengesHeader>
+            <RNText bold size={16} color="#555555">
+              Principais desafios
+            </RNText>
+            <RNText size={12} color="#777777">
+              Ver todos
+            </RNText>
+          </MainChallengesHeader>
+          <Challenge
+            hours={99}
+            partner="Shawee"
+            title="Desafio DevHard"
+            stack="UX Design"
+          />
+          <Challenge
+            hours={99}
+            partner="Shawee"
+            title="Desafio DevHard"
+            stack="UX Design"
+          />
+          <Challenge
+            hours={99}
+            partner="Shawee"
+            title="Desafio DevHard"
+            stack="UX Design"
+          />
+        </MainChallenges>
+        <Hackathons>
+          <MainChallengesHeader>
+            <RNText bold size={16} color="#555555">
+              Principais desafios
+            </RNText>
+            <RNText size={12} color="#777777">
+              Ver todos
+            </RNText>
+          </MainChallengesHeader>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{alignItems: 'center', paddingLeft: 16}}
+            style={{marginTop: 8}}>
+            <HackathonBanner
+              description="Inscrições até dia 10/01"
+              title="Hackathon CCR"
+            />
+            <HackathonBanner
+              description="Inscrições até dia 10/01"
+              title="Hackathon CCR"
+            />
+          </ScrollView>
+        </Hackathons>
+        <MainChallenges>
+          <MainChallengesHeader>
+            <RNText bold size={16} color="#555555">
+              Principais desafios
+            </RNText>
+            <RNText size={12} color="#777777">
+              Ver todos
+            </RNText>
+          </MainChallengesHeader>
+          <Challenge
+            hours={99}
+            partner="Shawee"
+            title="Desafio DevHard"
+            stack="UX Design"
+          />
+          <Challenge
+            hours={99}
+            partner="Shawee"
+            title="Desafio DevHard"
+            stack="UX Design"
+          />
+          <Challenge
+            hours={99}
+            partner="Shawee"
+            title="Desafio DevHard"
+            stack="UX Design"
+          />
+        </MainChallenges>
       </Content>
     </Container>
   );

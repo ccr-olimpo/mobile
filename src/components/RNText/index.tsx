@@ -5,6 +5,7 @@ type RNTextProps = TextProps & {
   bold?: boolean;
   size?: number;
   color?: string;
+  // marginLeft?: number;
 };
 
 const RNText: React.FC<RNTextProps> = ({
@@ -12,9 +13,11 @@ const RNText: React.FC<RNTextProps> = ({
   size = 16,
   children,
   color,
+  ...rest
 }) => {
   return (
     <Text
+      {...rest}
       style={{
         fontFamily: `${bold ? 'Poppins-Bold' : 'Poppins-Regular'}`,
         fontSize: size,
