@@ -7,6 +7,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <StatusBar backgroundColor="#44FFDA"  />
+      <Routes />
     </SafeAreaProvider>
   );
 }

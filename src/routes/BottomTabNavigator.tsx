@@ -36,7 +36,6 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="Home"
         component={Home}
-        options={{ headerTitle: 'Tab One Title' }}
       />
     </HomeStack.Navigator>
   );
