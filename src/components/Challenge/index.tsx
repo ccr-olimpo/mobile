@@ -6,7 +6,6 @@ import {
   Infos,
   Details,
   StackContainer,
-  StackText,
 } from './styles';
 
 type ChallengeProps = {
