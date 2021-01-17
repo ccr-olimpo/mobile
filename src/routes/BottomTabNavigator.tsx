@@ -1,11 +1,12 @@
-import * as React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
+import * as React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import { MaterialIcons } from "@expo/vector-icons";
 
-import Home from "../screens/Home";
+import Home from '../screens/Home';
+import Briefing from '../screens/Briefing';
 // import Search from '../screens/Search';
-import { BottomTabParamList } from "../types";
+import { BottomTabParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -36,8 +37,15 @@ export default function BottomTabNavigator() {
         activeTintColor: "#213A4A",
         inactiveTintColor: "rgba(33, 58, 74, 0.5)",
       }}
-    >
-      <BottomTab.Screen name="Home" component={HomeNavigator} />
+      >
+      <BottomTab.Screen
+        name="Home"
+        component={HomeNavigator}
+      />
+      <BottomTab.Screen
+        name="Briefing"
+        component={BriefingNavigator}
+      />
       {/* <BottomTab.Screen
         name="Search"
         component={SearchNavigator}
@@ -60,3 +68,30 @@ function HomeNavigator() {
     </HomeStack.Navigator>
   );
 }
+
+const BriefingStack = createStackNavigator();
+
+function BriefingNavigator() {
+  return (
+    <BriefingStack.Navigator>
+      <BriefingStack.Screen
+        name="Briefing"
+        component={Briefing}
+      ></BriefingStack.Screen>
+    </BriefingStack.Navigator>
+  );
+}
+
+const SearchStack = createStackNavigator();
+
+// function SearchNavigator() {
+//   return (
+//     <SearchStack.Navigator>
+//       <SearchStack.Screen
+//         name="Search"
+//         component={Search}
+//         options={{ headerTitle: 'Tab Two Title' }}
+//       />
+//     </SearchStack.Navigator>
+//   );
+// }
