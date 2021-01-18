@@ -70,7 +70,7 @@ const recruting = [
   },
 ];
 
-const Home = ({ navigation }) => {
+const Home = () => {
   const nav = useNavigation();
   return (
     <SafeAreaView>
