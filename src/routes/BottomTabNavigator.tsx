@@ -7,6 +7,7 @@ import Home from '../screens/Home';
 import Briefing from '../screens/Briefing';
 // import Search from '../screens/Search';
 import { BottomTabParamList } from '../types';
+import Search from '../screens/Search';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -15,6 +16,7 @@ const icons = {
   Search: "search",
   Bookmark: "bookmark",
   Profile: "person",
+  Briefing: "bookmark"
 };
 
 export default function BottomTabNavigator() {
@@ -45,6 +47,10 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Briefing"
         component={BriefingNavigator}
+      />
+      <BottomTab.Screen
+        name="Search"
+        component={Search}
       />
       {/* <BottomTab.Screen
         name="Search"
@@ -77,6 +83,7 @@ function BriefingNavigator() {
       <BriefingStack.Screen
         name="Briefing"
         component={Briefing}
+        options={{ headerShown: false }}
       ></BriefingStack.Screen>
     </BriefingStack.Navigator>
   );

@@ -6,9 +6,14 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 type SearchBarProps = TextInputProps & {
   showClear?: boolean;
+  onSubmit?: any;
 };
 
-const SearchBar: React.FC<SearchBarProps> = ({ placeholder, showClear }) => {
+const SearchBar: React.FC<SearchBarProps> = ({
+  placeholder,
+  showClear,
+  onSubmit,
+}) => {
   const [value, setValue] = useState<string>("");
   const shouldShowClear = () => (
     <>
@@ -21,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder, showClear }) => {
   );
   return (
     <Container>
-      <TouchableOpacity onPress={() => console.log("aa")}>
+      <TouchableOpacity onPress={() => onSubmit("aa")}>
         <MaterialIcons name="search" size={32} color="#555555" />
       </TouchableOpacity>
       <TextInput
@@ -29,7 +34,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ placeholder, showClear }) => {
         placeholder={placeholder}
         value={value}
         onChangeText={(text) => setValue(text)}
-        onSubmitEditing={() => console.log("bb")}
+        onSubmitEditing={() => onSubmit("bb")}
       />
       {shouldShowClear()}
     </Container>

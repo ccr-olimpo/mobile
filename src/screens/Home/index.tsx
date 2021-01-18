@@ -1,4 +1,6 @@
 import React from "react";
+import { ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import RNText from "../../components/RNText";
 import SearchBar from "../../components/SearchBar";
 import {
@@ -13,13 +15,12 @@ import {
   MainChallengesHeader,
   Hackathons,
 } from "./styles";
-import { ScrollView } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import avatar from "../../images/avatar.png";
 import Partner from "../../components/Partner";
 import Challenge from "../../components/Challenge";
 import HackathonBanner from "../../components/HackathonBanner";
+import { useNavigation } from "@react-navigation/native";
 
 const challenges = [
   {
@@ -69,7 +70,8 @@ const recruting = [
   },
 ];
 
-const Home = () => {
+const Home = ({ navigation }) => {
+  const nav = useNavigation();
   return (
     <SafeAreaView>
       <Container contentInsetAdjustmentBehavior="automatic">
@@ -83,7 +85,11 @@ const Home = () => {
             </TitleAndSubtitle>
             <Avatar source={avatar} />
           </Welcome>
-          <SearchBar placeholder="Procure por algum projeto aqui..." showClear/>
+          <SearchBar
+            placeholder="Procure por algum projeto aqui..."
+            showClear
+            onSubmit={() => nav.navigate("Search")}
+          />
         </Header>
         <Content>
           <Partners>
@@ -135,7 +141,7 @@ const Home = () => {
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{ alignItems: "center", paddingLeft:16 }}
+              contentContainerStyle={{ alignItems: "center", paddingLeft: 16 }}
               style={{ marginTop: 8 }}
             >
               <HackathonBanner

@@ -29,10 +29,10 @@ const Briefing = () => {
         <Welcome>
           <Top>
             <Icon name="arrow-left" size={32} color="#213A4A" />
-            <RNText>Briefing</RNText>
+            <RNText size={24} bold color="#213A4A">Briefing</RNText>
             <TopSave>
               <Icon name="bookmark" size={32} color="#213A4A"/>
-              <TopTextSave>salvar {"\n"} projeto</TopTextSave>
+              <TopTextSave>Salvar{"\n"}projeto</TopTextSave>
             </TopSave>
           </Top>
         </Welcome>
@@ -42,7 +42,7 @@ const Briefing = () => {
       <DetailChallenge
           hours={3}
           partner="Shawee"
-          stack="Ux Design"
+          stack="UX Design"
           title="Melhorando a XP"
           children=""
           description="Encontrar um problema de usabilidade em nossa plataforma e prototipar uma solução, justificando sua proposta."

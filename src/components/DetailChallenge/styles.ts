@@ -3,7 +3,8 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   background-color: #ffffff;
   flex-direction: column;
-  width:330px;
+  width:356px;
+  height: 300px;
   border-radius: 24px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.04);
   align-items: center;
