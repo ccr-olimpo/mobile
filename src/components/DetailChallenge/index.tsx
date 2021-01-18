@@ -1,7 +1,8 @@
-import React from 'react';
-import RNText from '../RNText';
-import Icon from 'react-native-vector-icons/Feather'
-import Button from '../Button';
+import React, { useState } from "react";
+import Icon from "react-native-vector-icons/Feather";
+import shawee from "../../images/shawee-logo.png";
+import RNText from "../RNText";
+import Button from "../Button";
 import {
   Container,
   PartnerLogo,
@@ -11,7 +12,9 @@ import {
   Infos,
   Details,
   StackContainer,
-} from './styles';
+} from "./styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
 type ChallengeProps = {
   partner: string;
@@ -20,6 +23,7 @@ type ChallengeProps = {
   stack: string;
   description: string;
   date: string;
+  handleSubmit: any;
 };
 
 const Challenge: React.FC<ChallengeProps> = ({
@@ -28,22 +32,24 @@ const Challenge: React.FC<ChallengeProps> = ({
   stack,
   title,
   description,
-  date
+  date,
+  handleSubmit,
 }) => {
+  const nav = useNavigation();
   return (
     <Container>
       <TopInfo>
-        <PartnerLogo
-          source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
-          }}
-        />
+        <TouchableOpacity onPress={() => nav.navigate("Search")}>
+          <PartnerLogo source={shawee} />
+        </TouchableOpacity>
         <Infos>
-          <RNText>{partner}</RNText>
-          <RNText bold>{title}</RNText>
+          <RNText color="#333333">{partner}</RNText>
+          <RNText bold size={20} color="#213A4A">
+            {title}
+          </RNText>
           <Details>
             <StackContainer>
-              <RNText size={13} color="#E949F5">
+              <RNText size={13} color="#333333">
                 {stack}
               </RNText>
             </StackContainer>
@@ -55,10 +61,15 @@ const Challenge: React.FC<ChallengeProps> = ({
         <RNText bold>O seu desafio nesse teste é:</RNText>
         <RNText size={12}>{description}</RNText>
         <DateDetailInfo>
-          <Icon name="info" size={24} color="#213A4A"/>
+          <Icon
+            style={{ marginRight: 8 }}
+            name="info"
+            size={24}
+            color="#213A4A"
+          />
           <RNText size={12}>{date}</RNText>
         </DateDetailInfo>
-        <Button onPress={()=>{}}>Submeter projeto</Button>
+        <Button onPress={() => handleSubmit()}>Submeter projeto</Button>
       </DetailInfo>
     </Container>
   );

@@ -73,14 +73,18 @@ const Search = () => {
         <Content>
           <MainChallenges>
             {challenges.map(({ image, hours, partner, title, stack }, i) => (
-              <Challenge
+              <TouchableOpacity
                 key={i}
-                image={image}
-                hours={hours}
-                partner={partner}
-                title={title}
-                stack={stack}
-              />
+                onPress={() => nav.navigate("Briefing")}
+              >
+                <Challenge
+                  image={image}
+                  hours={hours}
+                  partner={partner}
+                  title={title}
+                  stack={stack}
+                />
+              </TouchableOpacity>
             ))}
           </MainChallenges>
         </Content>
