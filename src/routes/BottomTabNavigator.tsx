@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Home from '../screens/Home';
 import Briefing from '../screens/Briefing';
-// import Search from '../screens/Search';
+import Rank from '../screens/Rank';
 import { BottomTabParamList } from '../types';
 import Search from '../screens/Search';
 
@@ -16,7 +16,8 @@ const icons = {
   Search: "search",
   Bookmark: "bookmark",
   Profile: "person",
-  Briefing: "bookmark"
+  Briefing: "bookmark",
+  Rank: "podium-gold"
 };
 
 export default function BottomTabNavigator() {
@@ -24,11 +25,11 @@ export default function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="Home"
       screenOptions={({ route, navigation }) => ({
-        tabBarIcon: ({ color, size, focused }) => {
-          return (
+        tabBarIcon: ({ color, size, focused }) => 
+          route.name==='Rank'
+            ? <MaterialCommunityIcons name="podium-gold" size={24} color="black" /> :
             <MaterialIcons name={icons[route.name]} size={40} color="#213A4A" />
-          );
-        },
+        ,
       })}
       tabBarOptions={{
         showLabel: false,
@@ -52,10 +53,10 @@ export default function BottomTabNavigator() {
         name="Search"
         component={Search}
       />
-      {/* <BottomTab.Screen
-        name="Search"
-        component={SearchNavigator}
-      /> */}
+      <BottomTab.Screen
+        name="Rank"
+        component={RankNavigator}
+      />
     </BottomTab.Navigator>
   );
 }
@@ -89,16 +90,16 @@ function BriefingNavigator() {
   );
 }
 
-const SearchStack = createStackNavigator();
+const RankStack = createStackNavigator();
 
-// function SearchNavigator() {
-//   return (
-//     <SearchStack.Navigator>
-//       <SearchStack.Screen
-//         name="Search"
-//         component={Search}
-//         options={{ headerTitle: 'Tab Two Title' }}
-//       />
-//     </SearchStack.Navigator>
-//   );
-// }
+function RankNavigator() {
+  return (
+    <RankStack.Navigator>
+      <RankStack.Screen
+        name="Rank"
+        component={Rank}
+        options={{ headerShown: false }}
+      />
+    </RankStack.Navigator>
+  );
+}
