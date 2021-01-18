@@ -30,8 +30,8 @@ export const DateDetailInfo = styled.View`
 `;
 
 export const PartnerLogo = styled.Image`
-  width: 80px;
-  height: 80px;
+  width: 85px;
+  height: 85px;
   border-radius: 8px;
 `;
 
@@ -55,6 +55,7 @@ export const StackContainer = styled.View<{borderColor?: string}>`
   height: 24px;
   align-items: center;
   justify-content: center;
+  padding:5px;
   /* align-self: flex-end; */
 `;
 
